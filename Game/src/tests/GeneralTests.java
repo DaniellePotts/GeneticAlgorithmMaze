@@ -84,7 +84,7 @@ public class GeneralTests {
 			MazeGenerator mG = new MazeGenerator();
 			g.ID = 5;
 			g.Fitness = 100;
-			textOutput.Write(g,mG.GetMaze(MazeSelection.StraightMaze));
+			textOutput.Write(g,mG.GetMaze(MazeSelection.TestMaze));
 			finished = true;
 		} catch (Exception e) {
 			e.printStackTrace();
