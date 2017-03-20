@@ -203,7 +203,7 @@ public class PanelSetup {
 				}
 			}
 		});
-		SetupPlayStopPauseButton(Play, Pause, Restart, EndGeneCycle);
+		ButtonSetup(Play, Pause, Restart, EndGeneCycle);
 		return panel;
 	}
 
@@ -268,7 +268,7 @@ public class PanelSetup {
 		return result;
 	}
 
-	private static void SetupPlayStopPauseButton(JButton play, JButton pause, JButton restart, JButton EndGeneCycle) {
+	private static void ButtonSetup(JButton play, JButton pause, JButton restart, JButton EndGeneCycle) {
 		play.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -389,6 +389,7 @@ public class PanelSetup {
 		frame.setFocusable(true);
 		frame.setBackground(Color.WHITE);
 		frame.setResizable(false);
+		frame.setTitle("Options");
 		JPanel leftPanel = new JPanel(new GridBagLayout());
 		JPanel rightPanel = new JPanel(new GridBagLayout());
 

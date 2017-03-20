@@ -17,7 +17,6 @@ public class ControlAI {
 
 	private boolean terminate = false;
 	private List<Coords> coords = null;
-	private String endReason = "";
 
 	public ControlAI(Player p, Map m, GameController gc) {
 		this.player = p;
@@ -28,10 +27,8 @@ public class ControlAI {
 	public void RunAI(Gene gene) throws InterruptedException {
 		Thread.sleep(1 * SystemConfigs.SystemSpeed);
 		while (!terminate) {
-			while (SystemConfigs.Pause) {
-				System.out.println("System paused");
-			}
-
+			while (SystemConfigs.Pause) {}
+			
 			if (SystemConfigs.Restart) {
 				terminate = true;
 				break;
@@ -44,7 +41,7 @@ public class ControlAI {
 			}
 			CheckCoordsCount();
 			if (player.GetTileX() == map.maze.EndXPosition && player.GetTileY() == map.maze.EndYPosition) {
-				endReason = "Gene:" + gene.ID + " of generation " + AlgorithmSettings.Generation + " reached the end!";
+				System.out.println("Gene:" + gene.ID + " of generation " + AlgorithmSettings.Generation + " reached the end!");
 				TextFileOutput tOutput = new TextFileOutput();
 				tOutput.Write(gene, map.maze);
 				terminate = true;
@@ -98,7 +95,6 @@ public class ControlAI {
 		gene.x = player.GetTileX();
 		gene.y = player.GetTileY();
 
-		System.out.println("End of cycle. Reason for ending: " + endReason);
 		terminate = false;
 		coords = null;
 	}
@@ -160,7 +156,6 @@ public class ControlAI {
 		}
 		for (int i = 0; i < coords.size(); i++) {
 			if (coords.get(i).count == AlgorithmSettings.DupliacateLocationLimit) {
-				endReason = "Player has met this spot " + AlgorithmSettings.DupliacateLocationLimit + " times.";
 				terminate = true;
 				return;
 			}
