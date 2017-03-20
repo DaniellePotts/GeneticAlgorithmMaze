@@ -1,0 +1,5 @@
+1) Normalize the fitness values of all genes (n),
+2) Put n copies of each gene into our mating pool (bucket),
+3) Pick two random genes out at random and mate them,
+4) Do this x number of times where x is the population size,
+5) Get one half from the mother gene and one half from the father to create the child

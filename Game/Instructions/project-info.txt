@@ -1,0 +1,18 @@
+About this project:,
+
+This project intends to demonstrate the usability of adaptive AI in realtime applications - using games software as a testing environment. The adaptive AI method of choice is a genetic algorithm.
+
+
+How a genetic algorithm works:,
+
+1) Initialize a population of n size,
+2) Evaluate population (in this case let the genes try to solve the maze),
+3) Assign fitness value (in this project fitness is defined by how close the genes get to the goal),
+4) Mating the genes,
+	4-1) Mutate genes this is not something that always occurs - but it is an attempt to increase variance. Mutation changes random elements.,
+5) Repeat from 2 and continue this process until we reach a goal,
+
+Further reading:,
+
+https://www.doc.ic.ac.uk/~nd/surprise_96/journal/vol1/hmw/article1.html,
+http://geneticalgorithms.ai-depot.com/Tutorial/Overview.html,

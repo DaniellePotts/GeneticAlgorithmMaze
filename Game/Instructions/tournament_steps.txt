@@ -1,0 +1,5 @@
+1) Pick X random number of genes from our population to creating a mating pool,
+2) Get the fittest among the mating pool,
+3) Chosen gene becomes the parent,
+4) Do this twice so we have two parents to create our child gene,
+5) Pick random bits of each gene to create the child,
