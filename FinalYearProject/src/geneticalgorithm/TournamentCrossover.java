@@ -31,14 +31,11 @@ public class TournamentCrossover {
 	private  Gene Crossover(Gene partnerA, Gene partnerB){
 		Gene child = new Gene();
 		for(int i=0;i<child.possibleMovements.size();i++){
-			String movement = "";
 			if(Math.random() <= AlgorithmSettings.UniformRate){
-				movement = partnerA.possibleMovements.get(i).Movement;
+				child.possibleMovements.get(i).Movement = partnerA.possibleMovements.get(i).Movement;
 			}else{
-				movement = partnerB.possibleMovements.get(i).Movement;
+				child.possibleMovements.get(i).Movement = partnerB.possibleMovements.get(i).Movement;
 			}
-			
-			child.possibleMovements.get(i).Movement = movement;
 		}
 		
 		return child;

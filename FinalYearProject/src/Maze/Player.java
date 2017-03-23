@@ -2,26 +2,25 @@ package Maze;
 
 import java.awt.Image;
 
+import geneticalgorithm.Gene;
 import globals.FileNames;
 import helpers.ImageHelper;
 
-public class Player {
+public class Player extends Gene {
 	public Image PlayerSprite;
-	private int TilePositionX, TilePositionY;
 
 	public Player(int tileX, int tileY) {		
 		PlayerSprite = ImageHelper.GetImageResource(FileNames.PLAYER_DOWN_GRAPHIC_FILE_PATH);  //default
-
-		TilePositionX = tileX;
-		TilePositionY = tileY;
+		this.x = tileX;
+		this.y = tileY;
 	}
 
 	public void SetTileX(int x) {
-		TilePositionX = x;
+		this.x = x;
 	}
 
 	public void SetTileY(int y) {
-		TilePositionY = y;
+		this.y = y;
 	}
 
 	public Image GetPlayer() {
@@ -29,15 +28,15 @@ public class Player {
 	}
 
 	public int GetTileX() {
-		return TilePositionX;
+		return this.x;
 	}
 
 	public int GetTileY() {
-		return TilePositionY;
+		return this.y;
 	}
 
 	public void Move(int dx, int dy) {
-		TilePositionX += dx;
-		TilePositionY += dy;
+		this.x += dx;
+		this.y += dy;
 	}
 }

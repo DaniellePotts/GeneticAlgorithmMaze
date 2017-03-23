@@ -33,7 +33,7 @@ public class PanelSetup {
 	private static JLabel geneLbl;
 	private static JLabel avgFitnessLbl;
 	private static JLabel maxFitnessLbl;
-
+	private static JLabel pauseLbl;
 	private static JLabel fitnessMethodLbl;
 	private static JLabel mazeSwitchingLbl;
 	public static JFrame SetupFrame(Screen s) {
@@ -59,28 +59,24 @@ public class PanelSetup {
 			@Override
 			public void windowClosing(WindowEvent e) {
 				SystemConfigs.Pause = false;
-				SystemConfigs.Play = true;
 			}
 		});
 		bucketFrame.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
 				SystemConfigs.Pause = false;
-				SystemConfigs.Play = true;
 			}
 		});
 		optionsFrame.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
 				SystemConfigs.Pause = false;
-				SystemConfigs.Play = true;
 			}
 		});
 		projectInfoFrame.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
 				SystemConfigs.Pause = false;
-				SystemConfigs.Play = true;
 			}
 		});
 		InfoFrame.addActionListener(new ActionListener() {
@@ -133,6 +129,8 @@ public class PanelSetup {
 
 		fitnessMethodLbl = new JLabel("Fitness method: " + SystemConfigs.ChosenMethod.toString());
 		mazeSwitchingLbl = new JLabel("Maze Switching: " + Boolean.toString(SystemConfigs.MazeSwitching));
+		
+		pauseLbl = new JLabel("");
 	}
 	private static JPanel SouthPanel() {
 		JComboBox cboBox = new JComboBox();
@@ -237,6 +235,8 @@ public class PanelSetup {
 		panel.add(fitnessMethodLbl,gc);
 		gc.gridy = 460;
 		panel.add(mazeSwitchingLbl,gc);
+		gc.gridy = 470;
+		panel.add(pauseLbl,gc);
 		return panel;
 	}
 
@@ -251,6 +251,11 @@ public class PanelSetup {
 		speedLbl.setText("Speed: " + SystemConfigs.SystemSpeed);
 		fitnessMethodLbl.setText("Fitness method: " + SystemConfigs.ChosenMethod.toString());
 		mazeSwitchingLbl.setText("Maze Switching: " + Boolean.toString(SystemConfigs.MazeSwitching));
+		if(SystemConfigs.Pause){
+			pauseLbl.setText("Paused.");
+		}else{
+			pauseLbl.setText("");
+		}
 	}
 
 	private static List<String> GetEnums(boolean mazeEnums, boolean crossoverAlgorithms) {
@@ -273,7 +278,6 @@ public class PanelSetup {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				SystemConfigs.Pause = false;
-				SystemConfigs.Play = true;
 			}
 		});
 
@@ -281,7 +285,6 @@ public class PanelSetup {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				SystemConfigs.Pause = true;
-				SystemConfigs.Play = false;
 			}
 		});
 
@@ -289,7 +292,6 @@ public class PanelSetup {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				SystemConfigs.Restart = true;
-				SystemConfigs.Play = false;
 				SystemConfigs.Pause = false;
 			}
 		});

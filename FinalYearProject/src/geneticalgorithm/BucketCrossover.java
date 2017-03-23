@@ -47,17 +47,11 @@ public class BucketCrossover {
 		int midPoint = rand.nextInt(partnerA.possibleMovements.size()); //possible movements are our genes DNA, so we split this
 
 		for (int i = 0; i < partnerA.possibleMovements.size(); i++) {
-			PossibleMovements ps = new PossibleMovements();
-			ps.Possibility = partnerA.possibleMovements.get(i).Possibility;
-			ps.PreviousMovement =partnerA.possibleMovements.get(i).PreviousMovement;
-			
 			if (i > midPoint) {
-				ps.Movement = partnerA.possibleMovements.get(i).Movement;
+				child.possibleMovements.get(i).Movement = partnerA.possibleMovements.get(i).Movement;
 			} else {
-				ps.Movement = partnerB.possibleMovements.get(i).Movement;
+				child.possibleMovements.get(i).Movement = partnerB.possibleMovements.get(i).Movement;
 			}
-			
-			child.possibleMovements.add(ps);
 	}
 
 		return Mutate(child,AlgorithmSettings.MutationRate);

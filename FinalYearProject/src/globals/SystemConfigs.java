@@ -4,7 +4,6 @@ import enums.*;
 import geneticalgorithm.Population;
 
 public class SystemConfigs {
-	public static boolean Play = true;
 	public static boolean Restart = false;
 	public static boolean Pause = false;
 	public static boolean EndGeneCycle = false;
@@ -17,7 +16,7 @@ public class SystemConfigs {
 	public static Population LoadedPopulation = null;
 	public static Population saveablePopulation = null;
 	public static CrossoverAlgorithms currAlgorithm = CrossoverAlgorithms.Tournament;
-	public static MazeSelection currentMaze = MazeSelection.TestMaze;
+	public static MazeSelection currentMaze = MazeSelection.TrainingMaze3;
 	
 	//core algorithm settings
 	public static FitnessMethods ChosenMethod = FitnessMethods.Default;

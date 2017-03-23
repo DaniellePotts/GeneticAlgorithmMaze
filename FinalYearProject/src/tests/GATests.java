@@ -87,4 +87,16 @@ public class GATests {
 		
 		assertEquals(expectedListSize,actualPopSize);
 	}
+
+	public void CheckForDuplicatePossibilities(){
+		Gene g = new Gene();
+		
+		for(int i=0;i<g.possibleMovements.size();i++){
+			PossibleMovements ps = g.possibleMovements.get(i);
+			
+			for(int j=0;j<g.possibleMovements.size();j++){
+				
+			}
+		}
+	}
 }

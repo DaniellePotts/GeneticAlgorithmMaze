@@ -27,8 +27,14 @@ public class ControlAI {
 	public void RunAI(Gene gene) throws InterruptedException {
 		Thread.sleep(1 * SystemConfigs.SystemSpeed);
 		while (!terminate) {
-			while (SystemConfigs.Pause) {}
-			
+			while (SystemConfigs.Pause) {
+				PanelSetup p = new PanelSetup();
+				p.UpdateLabels();
+			}
+			if (!SystemConfigs.Pause) {
+				PanelSetup p = new PanelSetup();
+				p.UpdateLabels();
+			}
 			if (SystemConfigs.Restart) {
 				terminate = true;
 				break;
@@ -41,7 +47,8 @@ public class ControlAI {
 			}
 			CheckCoordsCount();
 			if (player.GetTileX() == map.maze.EndXPosition && player.GetTileY() == map.maze.EndYPosition) {
-				System.out.println("Gene:" + gene.ID + " of generation " + AlgorithmSettings.Generation + " reached the end!");
+				System.out.println(
+						"Gene:" + gene.ID + " of generation " + AlgorithmSettings.Generation + " reached the end!");
 				TextFileOutput tOutput = new TextFileOutput();
 				tOutput.Write(gene, map.maze);
 				terminate = true;

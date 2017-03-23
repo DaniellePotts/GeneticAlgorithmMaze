@@ -2,7 +2,7 @@ package globals;
 
 public class AlgorithmSettings {
 	public static final float MutationRate = 0.09f;
-	public static final int PopSize = 200;
+	public static final int PopSize = 75;
 	public static final int DupliacateLocationLimit = 5;
 	public static final double UniformRate = 0.5;
 	public static boolean Elitism = true;

@@ -1,1 +1,1 @@
-Gene: 105 Generation: 382 Fitness of gene: 8.366600265340756
+Gene: 172 Generation: 5 Fitness of gene: 8.366600265340756
