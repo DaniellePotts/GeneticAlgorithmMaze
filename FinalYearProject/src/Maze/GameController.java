@@ -34,7 +34,6 @@ public class GameController extends KeyAdapter {
 		}
 		if (keycode == KeyEvent.VK_A) {
 			if (!map.GetMap(player.GetTileX() - 1, player.GetTileY()).equals("w")) {
-				//player.PlayerSprite = ImageHelper.GetImageResource("C://Maze//Player_Left.png");
 				player.Move(-1, 0);
 				
 			}

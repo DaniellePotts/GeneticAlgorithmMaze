@@ -1,10 +1,7 @@
 package Maze;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.*;
-import geneticalgorithm.*;
 import globals.*;
 
 public class Screen extends JPanel implements ActionListener {
