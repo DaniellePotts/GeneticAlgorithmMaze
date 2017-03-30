@@ -36,6 +36,7 @@ public class PanelSetup {
 	private static JLabel pauseLbl;
 	private static JLabel fitnessMethodLbl;
 	private static JLabel mazeSwitchingLbl;
+	private static JLabel populationLbl;
 	public static JFrame SetupFrame(Screen s) {
 		JFrame frame = new JFrame();
 		JPanel p = new JPanel();
@@ -129,9 +130,10 @@ public class PanelSetup {
 
 		fitnessMethodLbl = new JLabel("Fitness method: " + SystemConfigs.ChosenMethod.toString());
 		mazeSwitchingLbl = new JLabel("Maze Switching: " + Boolean.toString(SystemConfigs.MazeSwitching));
-		
+		populationLbl = new JLabel("Population Size: " + AlgorithmSettings.PopSize);
 		pauseLbl = new JLabel("");
 	}
+	
 	private static JPanel SouthPanel() {
 		JComboBox cboBox = new JComboBox();
 		List<String> mazes = GetEnums(true, false);
@@ -219,7 +221,7 @@ public class PanelSetup {
 		gc.gridy = 230;
 		panel.add(generationLbl, gc);
 		gc.gridy = 240;
-		panel.add(new JLabel("Population Size: " + AlgorithmSettings.PopSize), gc);
+		panel.add(populationLbl, gc);
 		gc.gridy = 260;
 		panel.add(geneLbl, gc);
 		gc.gridy = 280;
@@ -251,6 +253,7 @@ public class PanelSetup {
 		speedLbl.setText("Speed: " + SystemConfigs.SystemSpeed);
 		fitnessMethodLbl.setText("Fitness method: " + SystemConfigs.ChosenMethod.toString());
 		mazeSwitchingLbl.setText("Maze Switching: " + Boolean.toString(SystemConfigs.MazeSwitching));
+		populationLbl.setText("Population Size: " + AlgorithmSettings.PopSize);
 		if(SystemConfigs.Pause){
 			pauseLbl.setText("Paused.");
 		}else{

@@ -81,6 +81,7 @@ public class SerializingHelper {
 		AlgorithmSettings.BestFitness = pop.MaxFitness;
 		AlgorithmSettings.AverageFitness = pop.AverageFitness;
 		AlgorithmSettings.Generation = pop.Generation;
+		AlgorithmSettings.PopSize = pop.Genes.size();
 		return newPop;
 	}
 }
